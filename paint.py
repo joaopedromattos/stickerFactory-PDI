@@ -30,21 +30,18 @@ class Paint(object):
         self.pen_button = Button(self.root, text='pen', command=self.use_pen)
         self.pen_button.grid(row=0, column=1)
 
-        self.brush_button = Button(self.root, text='brush', command=self.use_brush)
-        self.brush_button.grid(row=0, column=2)
-
         self.color_button = Button(self.root, text='color', command=self.choose_color)
-        self.color_button.grid(row=0, column=3)
+        self.color_button.grid(row=0, column=2)
 
         self.eraser_button = Button(self.root, text='eraser', command=self.use_eraser)
-        self.eraser_button.grid(row=0, column=4)
+        self.eraser_button.grid(row=0, column=3)
 
         self.choose_size_button = Scale(self.root, from_=15, to=40, orient=HORIZONTAL)
-        self.choose_size_button.grid(row=0, column=5)
+        self.choose_size_button.grid(row=0, column=4)
 
         # Adicionei o seguinte botao
         self.save_button = Button(self.root, text='save', command=self.save)
-        self.save_button.grid(row=0, column=6)
+        self.save_button.grid(row=0, column=5)
         
 
         # Adicionei esse parametro
@@ -94,10 +91,6 @@ class Paint(object):
     def use_rectangle(self):
         print("aqui dentro")
         self.activate_button(self.rectangle_button, recMode=True)
-        
-
-    def use_brush(self):
-        self.activate_button(self.brush_button)
 
     def choose_color(self):
         self.eraser_on = False

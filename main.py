@@ -6,6 +6,8 @@ import cv2
 
 
 
+
+
 # Variavel que testa se o user clicou no campo do diretorio
 firstclick = True
 
@@ -22,15 +24,22 @@ def on_entry_click(event):
 # Exibe a imagem depois de apertado o botao
 def newCanvas():
     try:
+        
         imagemNomeConservado = ed.get()
         formato = imagemNomeConservado.split(".")
-        if (formato[1] != 'png'):
-            img = cv2.imread(imagemNomeConservado)
-            
-            cv2.imwrite(formato[0] + ".png", img, [cv2.IMWRITE_PNG_COMPRESSION])
-            imagemNomeConservado = formato[0] + ".png"
-            
-        Paint(imagemNomeConservado)
+        try:
+            if (formato[1] != 'png'):
+                img = cv2.imread(imagemNomeConservado)
+                
+                cv2.imwrite(formato[0] + ".png", img, [cv2.IMWRITE_PNG_COMPRESSION])
+                imagemNomeConservado = formato[0] + ".png"
+                
+            Paint(imagemNomeConservado)
+        except(IndexError):
+            lb = Label(window, text="IMAGEM NAO ENCONTRADA OU DE FORMATO INVALIDO")
+            lb.pack()
+            return 0    
+
     except(TclError):
         lb = Label(window, text="IMAGEM NAO ENCONTRADA OU DE FORMATO INVALIDO")
         lb.pack()
@@ -42,13 +51,16 @@ window = Tk()
 window.style = ttk.Style()
 window.style.theme_use("alt")
 window.title('Sticker Factory')
+# window.geometry('400x40')
 
 
 # Instanciamento do campo do diretorio da imagem
-ed = Entry(window)
+ed = Entry(window, width=95)
 ed.insert(0, "Insira o diretório da imagem")
 ed.bind('<FocusIn>', on_entry_click)
 ed.config(fg = 'grey')
+
+
 
 # Instanciamento do botao de carregamento da imagem para exibicao
 loadImageBtn = Button(window, text='Carregar imagem', command=newCanvas)
