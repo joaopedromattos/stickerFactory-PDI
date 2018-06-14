@@ -1,4 +1,5 @@
 # stickerFactory-PDI
+###### Integrantes do grupo : João Pedro Rodrigues Mattos 10295732 e Gustavo Sasaki Roncaglia 10295652
 
 ### 1. Contextualização
 Fazer "adesivos virtuais" (stickers) a partir de fotografias para o aplicativo móvel de mensagens Telegram é uma tarefa complicada e demorada, nosso projeto para a disciplina de Processamento de Imagens visa a facilitar este processo. Para tal, serão utilizadas imagens coloridas ou não, cujo formato pode ou não ser o PNG.
@@ -9,7 +10,7 @@ Utilizar das técnicas de compressão, ajuste de imagens coloridas com equaliza�
 ### 3. Etapas
 - Pré-segmentação das imagens usando a técnica "Graph cuts";
 - Seleção de partes da imagem a serem removidas pelo usuário a partir de uma interface gráfica; 
-- Segmentação definitiva da imagem; Compressão da imagem já segmentada; 
+- Segmentação definitiva da imagem pelo método já citado e pelo ; Compressão da imagem já segmentada; 
 - Equalização de histogramas + ajuste de gamma; 
 - Correção do formato atual para o formato PNG; 
 - Upload da imagem para o bot de stickers do Telegram.
