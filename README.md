@@ -19,3 +19,7 @@ Utilizar das técnicas de compressão, ajuste de imagens coloridas com equaliza�
 - Equalização de histogramas + ajuste de gamma;
 - Correção do formato atual para o formato PNG; 
 - Upload da imagem para o bot de stickers do Telegram.
+
+
+
+
