@@ -1,7 +1,7 @@
 # stickerFactory-PDI
 ### Integrantes do grupo 
-##### - João Pedro Rodrigues Mattos - 10295732 
-##### - Gustavo Sasaki Roncaglia - 10295652
+- João Pedro Rodrigues Mattos - 10295732 
+- Gustavo Sasaki Roncaglia - 10295652
 
 ### 1. Contextualização
 Fazer "adesivos virtuais" (stickers) a partir de fotografias para o aplicativo móvel de mensagens Telegram é uma tarefa complicada e demorada, nosso projeto para a disciplina de Processamento de Imagens visa a facilitar este processo. Para tal, serão utilizadas imagens coloridas ou não, cujo formato pode ou não ser o PNG.
