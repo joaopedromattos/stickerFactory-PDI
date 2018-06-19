@@ -69,6 +69,8 @@ class Paint(object):
 
         self.rect = None
 
+        self.rectDim = ()
+
 
         self.setup()
         self.root.mainloop()
@@ -89,7 +91,6 @@ class Paint(object):
     
     # Adicionei o metodo abaixo
     def use_rectangle(self):
-        print("aqui dentro")
         self.activate_button(self.rectangle_button, recMode=True)
 
     def choose_color(self):
@@ -118,7 +119,7 @@ class Paint(object):
                                capstyle=ROUND, smooth=TRUE, splinesteps=36)
             
             # Adicionei a seguinte linha para fazer a mascara
-            self.preSavedDraw.line([(self.old_x, self.old_y), (event.x, event.y)], fill=(0, 0, 0))
+            self.preSavedDraw.line([(self.old_x, self.old_y), (event.x, event.y)], fill=(0, 0, 0), width=self.line_width)
             # self.preSavedDraw.ellipse([(self.old_x, self.old_y), (event.x, event.y)], fill=(0, 0, 0))
             # self.preSavedDraw.chord([(self.old_x, self.old_y), (event.x, event.y)], fill=(0, 0, 0))
 
@@ -130,7 +131,9 @@ class Paint(object):
     def save(self):        
         filename = "mask.png"
         self.preSavedMask.save(filename)
-        Processment(self.imageName)
+
+        # Inicio o uso da classe contida no arquivo "processment.py"
+        Processment(self.imageName, self.rectDim)
 
 
     # Adicionei o codigo abaixo
@@ -151,7 +154,8 @@ class Paint(object):
 
         # expand rectangle as you drag the mouse
         self.c.coords(self.rect, self.start_x, self.start_y, curX, curY)
-
+        
+        self.rectDim = (self.start_x, self.start_y, curX, curY)
 
 
     def on_button_release(self, event):
