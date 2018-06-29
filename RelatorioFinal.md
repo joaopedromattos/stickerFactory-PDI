@@ -35,9 +35,9 @@ Apesar do longo tempo de execução necessário para apresentar resultados, ambo
 
 
 ### Imagens resultados
-[Imagem teste](https://imgur.com/a/zt1bC0N)
-[Resultado do Grab Cut](https://imgur.com/a/PVQngos)
-[Resultado do MST Segmentation](https://imgur.com/a/EWAr3PL) 
+- [Imagem teste](https://imgur.com/a/zt1bC0N)
+- [Resultado do Grab Cut](https://imgur.com/a/PVQngos)
+- [Resultado do MST Segmentation](https://imgur.com/a/EWAr3PL) 
 
 ### Observações
 Tivemos problemas com a implementação do MST. Apesar de seu conceito ter ficado claro, devido ao prazo de entrega, não conseguimos deixar o método tão funcional quanto o proposto inicialmente.
